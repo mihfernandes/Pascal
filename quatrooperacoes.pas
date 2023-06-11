@@ -18,5 +18,5 @@ writeln("2 dividido por 2 é igual a --> " 2 / 2);
 	writeln("50 dividido por 5 é igual a -->", 50 / 5);
 		writeln(" 256004 dividido por 2 é igual a -->", 256004 / 2);
 
-		(*Lembrando que os codigos e os valores são apenas exemplos*)
+		(*Lembrando que os valores são apenas exemplos*)
 end
