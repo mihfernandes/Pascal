@@ -50,14 +50,14 @@ Begin
   func:= 0;
   func2:= 0;
   aux:= 0;
-  writeln ('OlÃ¡! Seja bem vindo(a) ao Sistema de Biblioteca. Digite a data de hoje.');
+  writeln ('Olá¡! Seja bem vindo(a) ao Sistema de Biblioteca. Digite a data de hoje.');
   writeln;
   repeat
     writeln ('Digite o dia (com dois dígitos, de 01 a 30):');
     writeln;
     readln (dia);
     writeln;
-    writeln ('Digite o mÃªs (com dois dígitos, de 01 a 12):');
+    writeln ('Digite o mês (com dois dígitos, de 01 a 12):');
     writeln;
     readln (mes);
     writeln;
@@ -69,9 +69,9 @@ Begin
     begin
       if (dia<24) and (mes<13) then
       begin
-        dia2:= dia+7;
-        mes2:= mes;
-        ano2:= ano;
+        dia2 := dia+7;
+        mes2 := mes;
+        ano2 := ano;
       end
       else if (dia>23) and (dia<31) then
       begin
@@ -88,10 +88,10 @@ Begin
           ano2:=ano+1;
         end;
       end
-      else writeln('VocÃª digitou uma data invÃ¡lida! Repita o procedimento:');
+      else writeln('Você digitou uma data inválida! Repita o procedimento:');
       writeln;
     end
-    else writeln('VocÃª digitou uma data invÃ¡lida! Repita o procedimento:');
+    else writeln('Você digitou uma data inválida! Repita o procedimento:');
     writeln;
   until (dia>0) and (dia<=30) and (mes>0) and (mes<=12);
 end;
@@ -194,7 +194,7 @@ begin
         writeln ('Digite o novo Nome do leitor.');
         writeln;
         readln (leitor[k].nome);
-        writeln ('Digite o novo EndereÃ§o do leitor.');
+        writeln ('Digite o novo Endereço do leitor.');
         writeln;
         readln (leitor[k].endereco);
         writeln ('Digite o novo Telefone do leitor.');
@@ -216,7 +216,7 @@ begin
     func2:= -1;
     if (l <> 1) then
     begin
-      writeln ('Nao foram encontrados leitores com esse nome.');
+      writeln ('Não foram encontrados leitores com esse nome.');
       writeln;
       writeln ('Tecle ENTER para voltar.');
       writeln;
@@ -242,10 +242,10 @@ begin
     writeln;
     for k:= 1 to (i-1) do
     begin
-      {Se (i-1) = 1, entÃ£o so ha um livro.}
+   
       if ((i-1) = 1) or (k = (i-1)) then
       begin
-        {livro[21] e um vetor nao cadastravel, cujos valores estÃ£o em branco.}
+   
         livro[k].titulo:= livro[21].titulo;
         livro[k].autor:= livro[21].autor;
         livro[k].editora:= livro[21].editora;
@@ -268,7 +268,7 @@ begin
           end
           else
           begin
-            {livro[21] e um vetor nao cadastravel, cujos valores estÃ£o em branco.}
+
             livro[k].titulo:= livro[21].titulo;
             livro[k].autor:= livro[21].autor;
             livro[k].editora:= livro[21].editora;
@@ -312,7 +312,7 @@ begin
       {Se (j-1) = 1, então so ha um leitor.}
       if ((j-1) = 1) or (k = (j-1)) then
       begin
-        {leitor[21] e um vetor nao cadastravel, cujos valores estÃ£o em branco.}
+ 
         leitor[k].nome:= leitor[21].nome;
         leitor[k].endereco:= leitor[21].endereco;
         leitor[k].telefone:= leitor[21].telefone;
@@ -337,7 +337,7 @@ begin
           end
           else
           begin
-            {leitor[21] e um vetor nao cadastravel, cujos valores estÃ£o em branco.}
+          
             leitor[k].nome:= leitor[21].nome;
             leitor[k].endereco:= leitor[21].endereco;
             leitor[k].telefone:= leitor[21].telefone;
@@ -403,7 +403,7 @@ begin
     end
     else if (k = (i-1)) then
     begin
-      writeln ('Nao ha livros emprestados.');
+      writeln ('Nao há livros emprestados.');
       writeln;
     end;
     writeln ('Tecle ENTER para voltar.');
@@ -437,13 +437,13 @@ begin
           end
           else if (((m = (j-1)) and (k = (i-1))) and (p = livro[k].q)) then
           begin
-            writeln ('Nao ha emprestimos para esse livro.');
+            writeln ('Nao há emprestimos para esse livro.');
             writeln;
           end;
     end;
     if ((k = (i-1)) and (consulta <> livro[k].titulo)) then
     begin
-      writeln ('Nao ha livros com este titulo.');
+      writeln ('Não há livros com este título.');
       writeln;
     end;
     writeln ('Tecle ENTER para voltar.');
@@ -463,7 +463,7 @@ begin
     writeln;
     writeln ('2 para CADASTRAR NOVO LEITOR.');
     writeln;
-    writeln ('3 para MODIFICAR A QUANTIDADE DE EXEMPLARES DE UM LIVRO JÃ CADASTRADO.');
+    writeln ('3 para MODIFICAR A QUANTIDADE DE EXEMPLARES DE UM LIVRO JÁ CADASTRADO.');
     writeln;
     writeln ('4 para MODIFICAR O CADASTRO DE UM LEITOR.');
     writeln;
@@ -473,7 +473,7 @@ begin
     writeln;
     writeln ('7 para CONSULTAR LISTAGEM DE LIVROS EMPRESTADOS COM SEUS RESPECTIVOS LEITORES.');
     writeln;
-    writeln ('8 para CONSULTAR LISTAGEM DE LEITORES DE DETERMINADO LIVRO (A PARTIR DO TÃTULO).');
+    writeln ('8 para CONSULTAR LISTAGEM DE LEITORES DE DETERMINADO LIVRO (A PARTIR DO TÍTULO).');
     writeln;
     writeln ('-1 para VOLTAR.');
     writeln;
@@ -515,7 +515,7 @@ begin
       begin
         livro[k].quant_emprest:= livro[k].quant_emprest + 1;
         livro[k].cpf_emprest[livro[k].q]:= leitor[n].cpf;
-        writeln ('Emprestimo efetuado com sucesso.');
+        writeln ('Empréstimo efetuado com sucesso.');
         writeln;
         leitor[n].quant_emprest:= leitor[n].quant_emprest + 1;
         leitor[n].listagem_emprest[leitor[n].o]:= livro[k].titulo;
@@ -526,7 +526,7 @@ begin
         leitor[n].data_emprest:= dia;
         leitor[n].data_devolucao:= dia2;
       end
-      else  writeln ('Emprestimo nao efetuado.');
+      else  writeln ('Empréstimo nao efetuado.');
       writeln;
     end;
     if (emprestimo = livro[k].titulo) and (livro[k].q <> 0) then
@@ -535,7 +535,7 @@ begin
       begin
         livro[k].quant_emprest:= livro[k].quant_emprest + 1;
         livro[k].cpf_emprest[livro[k].q]:= leitor[n].cpf;
-        writeln ('Emprestimo efetuado com sucesso.');
+        writeln ('Empréstimo efetuado com sucesso.');
         writeln;
         leitor[n].quant_emprest:= leitor[n].quant_emprest + 1;
         leitor[n].listagem_emprest[leitor[n].o]:= livro[k].titulo;
@@ -548,7 +548,7 @@ begin
       end
       else
       begin
-        writeln ('Emprestimo nao efetuado.');
+        writeln ('Empréstimo não efetuado.');
         writeln;
       end;
     end
@@ -591,7 +591,7 @@ begin
                 livro[k].cpf_emprest[p]:= livro[k].cpf_emprest[21];
           end;
         end;
-        writeln ('Devolucao efetuada com sucesso.');
+        writeln ('Devolução efetuada com sucesso.');
         writeln;
         leitor[n].quant_emprest:= leitor[n].quant_emprest - 1;
         for m:= 1 to leitor[n].o do
@@ -619,7 +619,7 @@ begin
       end
       else if (k = (i-1)) then
       begin
-        writeln ('Devolucao nao efetuada.');
+        writeln ('Devolução nao efetuada.');
         writeln;
       end;
       writeln ('Tecle ENTER para voltar.');
@@ -632,7 +632,7 @@ end;
 
 procedure MeusEmprestimos;
 begin
-  writeln ('A quantidade de emprestimos vigentes no seu nome e: ', (leitor[n].quant_emprest));
+  writeln ('A quantidade de empréstimos vigentes no seu nome e: ', (leitor[n].quant_emprest));
   writeln;
   writeln ('Tecle ENTER para voltar.');
   writeln;
@@ -716,7 +716,7 @@ end;
 begin
   repeat
     clrscr;
-    writeln ('Digite 1 para um FuncionÃ¡rio ou 2 para um Leitor.');
+    writeln ('Digite 1 para um Funcionário ou 2 para um Leitor.');
     writeln;
     readln (telainicial);
     writeln;
@@ -751,8 +751,8 @@ end.
 begin (teste2) then
       var
          quantidadeLivros := integer;
-      limLivro = 4
+      limLivro = 5
                writeln('Informe quantos livros você possui');
-              until(limLivro > 4);
-                             writeln('Você não pode ter mais que 4 livros');
+              until(limLivro > 5);
+                             writeln('Você não pode ter mais que 5 livros');
                       loop while(limLivro <= 4);
