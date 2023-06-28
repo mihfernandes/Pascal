@@ -18,3 +18,4 @@ writeln("Insira sua idade: ");
 	else 
          writeln("Você é maior de idade!");
 end
+//arthur meu codigo é melhork KKKKKK
